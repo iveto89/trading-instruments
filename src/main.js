@@ -6,11 +6,18 @@ class Instruments {
     }
 
     loadData() {
-        var self = this;
-        let instrumentRequest = new Request('http://dev.ivanikolova.eu/trading-instruments/instruments.txt', { method: 'GET' });
+        let self = this;
+        let headers = new Headers();
+        headers.append('Access-Control-Allow-Origin', 'http://localhost');
+        headers.append('Access-Control-Allow-Methods', 'GET');
+        headers.append('Access-Control-Allow-Headers', 'Content-Type');
+
+        // load data from the API
+        let instrumentRequest = new Request('./instruments.php', { method: 'GET' });
         fetch(instrumentRequest)
             .then(response => {
-                if (response && response.status === 200) return response.json();
+                if (response && response.status === 200)
+                    return response.json();
                 else throw new Error('Something went wrong on api server!');
             })
             .then(data => {
