@@ -1,0 +1,18 @@
+{
+  "name": "trader-instruments",
+  "version": "1.0.0",
+  "description": "Trader instruments app",
+  "main": "index.js",
+  "scripts": {
+    "watch": "babel --watch src --out-dir build --source-maps inline --copy-files",
+    "build": "babel src --out-dir build --source-maps inline --copy-files"
+  },
+  "author": "Iva Nikolova",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "http-server": "^0.10.0"
+  }
+}
