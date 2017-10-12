@@ -1,4 +1,7 @@
-#README
-npm install
+#Installation
 
-npm run build
+To install, run:
+
+```npm install```
+
+```npm run build```
